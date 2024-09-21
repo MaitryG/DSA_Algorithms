@@ -16,6 +16,13 @@ class Solution:
                 w = j[2]
                 if dist[u]!=float('inf') and dist[u]+w<dist[v]:
                     dist[v] = dist[u]+w
+        for j in adj:
+            u = j[0]
+            v = j[1]
+            w = j[2]
+            if dist[u] != float('inf') and dist[u] + w < dist[v]:
+                dist[v] = dist[u] + w
+                print("Contains negative cycles")
         return dist
 
 # {
