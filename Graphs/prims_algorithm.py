@@ -35,3 +35,4 @@ if __name__ == '__main__':
         adj[v].append([u,w])
     print(prims(adj))
 
+
