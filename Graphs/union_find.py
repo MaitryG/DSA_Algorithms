@@ -7,15 +7,14 @@ class DisjointSet:
             self.rank.append(0)
             self.parent.append(i)
             self.size.append(1)
-
-
+            print(self.parent)
 
     def find_ult_parent(self, node):
         if node == self.parent[node]:
             return node
 
         ulp = self.find_ult_parent(self.parent[node])
-        self.parent[node] = ulp
+        self.parent [node] = ulp
         return self.parent[node]
 
     def union_by_rank(self, u, v):
@@ -45,6 +44,7 @@ class DisjointSet:
             self.size[ult_u] += self.size[ult_v]
 
 ds = DisjointSet(8)
+print(ds.parent)
 # ds.union_by_rank(1, 2)
 # ds.union_by_rank(2, 3)
 # ds.union_by_rank(4, 5)
@@ -66,7 +66,7 @@ ds = DisjointSet(8)
 ds.union_by_size(1, 2)
 ds.union_by_size(2, 3)
 ds.union_by_size(4, 5)
-ds.union_by_size(6, 7)
+ds.union_by_size(6, 7 )
 ds.union_by_size(5, 6)
 
 if ds.find_ult_parent(3) == ds.find_ult_parent(7):
